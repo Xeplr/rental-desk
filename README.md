@@ -3,7 +3,7 @@
 **Rental Desk** — the example app built in the video series *Build a real app
 without hand-coding its screens*: equipment, customers and rentals designed in
 Configure UI, plus three small functions in `api/functions/rentals.js` (a rule on
-save, two buttons, a board). Watch the seven videos of the series: **[playlist — link to come]**
+save, two buttons, a board). Watch the seven videos of the series: **[Vibe App Development — the playlist](https://www.youtube.com/playlist?list=PLYXyU6NRwvC8)**
 
 A fresh install (`npm run setup`, then start it) has all of it: the forms and
 lists are in `api/screens/` and publish themselves on first start, creating
