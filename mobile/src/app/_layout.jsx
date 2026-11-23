@@ -39,7 +39,10 @@ export default function RootLayout() {
   const [failed, setFailed] = useState(null)
   useEffect(() => {
     hydrateStorage({ AsyncStorage, prefix: 'rental-desk', web: Platform.OS === 'web' })
-      .then(() => { startSession({ builtInServer: BUILT_IN_SERVER, suggested: devServer() }); setReady(true) }, (e) => setFailed(e.message || 'Could not start'))
+      .then(() => {
+        startSession({ builtInServer: BUILT_IN_SERVER, suggested: devServer() })
+        setReady(true)
+      }, (e) => setFailed(e.message || 'Could not start'))
   }, [])
   if (failed) return <View style={{ flex: 1, padding: 24, justifyContent: 'center' }}><Text>{failed}</Text></View>
   if (!ready) return null
