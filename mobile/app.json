@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Rental Desk",
+    "slug": "rental-desk",
+    "scheme": "rentaldesk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.example.rentaldesk" },
+    "android": { "package": "com.example.rentaldesk" },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "@react-native-community/datetimepicker",
+      ["expo-camera", { "cameraPermission": "Rental Desk uses the camera to take photos and read barcodes", "recordAudioAndroid": false, "barcodeScannerEnabled": true }],
+      ["expo-build-properties", { "android": { "usesCleartextTraffic": true } }]
+    ]
+  }
+}

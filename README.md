@@ -5,6 +5,11 @@ without hand-coding its screens*: equipment, customers and rentals designed in
 Configure UI, plus three small functions in `api/functions/rentals.js` (a rule on
 save, two buttons, a board). Watch the seven videos of the series: **[Vibe App Development — the playlist](https://www.youtube.com/playlist?list=PLYXyU6NRwvC8)**
 
+**On a phone:** `mobile/` is the same app drawn natively on Android and iOS —
+the menu, the Rentals board, add / edit with photos, Hand out / Returned and
+the New rental journey — with no screen code of its own
+([mobile/README.md](mobile/README.md)).
+
 A fresh install (`npm run setup`, then start it) has all of it: the forms and
 lists are in `api/screens/` and publish themselves on first start, creating
 their tables; the side rail comes from `api/migrations-auth/0006_rental_desk_menus.sql`.
