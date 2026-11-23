@@ -1,0 +1,50 @@
+{
+    "id": "equipment_item_list",
+    "kind": "xeplr-screen",
+    "name": "Equipment",
+    "nodes": [
+        {
+            "h": 0.8,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "list",
+            "type": "list",
+            "props": {
+                "title": "Equipment",
+                "openIn": "popup",
+                "actions": [
+                    "new",
+                    "edit",
+                    "delete"
+                ],
+                "columns": [
+                    {
+                        "field": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "field": "category",
+                        "label": "Category"
+                    },
+                    {
+                        "field": "dailyRate",
+                        "label": "Daily rate"
+                    },
+                    {
+                        "field": "condition",
+                        "label": "Condition"
+                    }
+                ],
+                "pageSize": 10,
+                "editScreen": "equipment_item_edit"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "source": "equipment_items",
+    "version": 1
+}

@@ -1,0 +1,242 @@
+{
+    "id": "rental_edit",
+    "kind": "xeplr-screen",
+    "name": "Rentals",
+    "nodes": [
+        {
+            "h": 0.07,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "label",
+            "type": "label",
+            "props": {
+                "text": "Add / edit rental",
+                "variant": "heading"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.4475,
+            "x": 0.04,
+            "y": 0.15,
+            "z": 2,
+            "id": "name",
+            "type": "text",
+            "props": {
+                "name": "reference",
+                "label": "Reference",
+                "required": true,
+                "validation": {
+                    "maxLength": 200
+                }
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.255,
+            "z": 3,
+            "id": "dropdown",
+            "type": "dropdown",
+            "props": {
+                "data": {
+                    "table": "customers",
+                    "source": "table"
+                },
+                "name": "customer",
+                "label": "Customer",
+                "default": "{previous.customer_edit.values.id}",
+                "required": true,
+                "placeholder": "Select…"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.36,
+            "z": 4,
+            "id": "dropdown2",
+            "type": "dropdown",
+            "props": {
+                "data": {
+                    "table": "equipment_items",
+                    "source": "table"
+                },
+                "name": "equipment",
+                "label": "Equipment",
+                "required": true,
+                "placeholder": "Select…"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.465,
+            "z": 5,
+            "id": "date",
+            "type": "date",
+            "props": {
+                "name": "startDate",
+                "label": "Start date",
+                "required": true
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.57,
+            "z": 6,
+            "id": "date2",
+            "type": "date",
+            "props": {
+                "name": "endDate",
+                "label": "End date",
+                "required": true
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.675,
+            "z": 7,
+            "id": "amount",
+            "type": "number",
+            "props": {
+                "name": "deposit",
+                "label": "Deposit",
+                "preset": "amount",
+                "validation": {
+                    "min": 0
+                },
+                "placeholder": "0.00"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.78,
+            "z": 8,
+            "id": "dropdown3",
+            "type": "dropdown",
+            "props": {
+                "data": {
+                    "source": "static",
+                    "options": [
+                        {
+                            "id": "reserved",
+                            "name": "Reserved"
+                        },
+                        {
+                            "id": "out",
+                            "name": "Out"
+                        },
+                        {
+                            "id": "returned",
+                            "name": "Returned"
+                        }
+                    ]
+                },
+                "name": "status",
+                "label": "Status",
+                "placeholder": "Select…"
+            }
+        },
+        {
+            "h": 0.18,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.885,
+            "z": 9,
+            "id": "notes",
+            "type": "textarea",
+            "props": {
+                "name": "notes",
+                "label": "Notes"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 1.09,
+            "z": 10,
+            "id": "amount2",
+            "type": "number",
+            "props": {
+                "name": "total",
+                "label": "Total",
+                "hidden": true,
+                "preset": "amount",
+                "validation": {
+                    "min": 0
+                },
+                "placeholder": "0.00"
+            }
+        },
+        {
+            "h": 0.07,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 1.195,
+            "z": 11,
+            "id": "buttons",
+            "type": "buttons",
+            "props": {
+                "title": "At the counter",
+                "buttons": [
+                    {
+                        "id": "hand-out",
+                        "when": [
+                            {
+                                "op": "eq",
+                                "field": "status",
+                                "value": "reserved"
+                            }
+                        ],
+                        "label": "Hand out",
+                        "action": "setRentalStatus",
+                        "params": {
+                            "status": "out"
+                        },
+                        "variant": "primary"
+                    },
+                    {
+                        "id": "returned",
+                        "ask": {
+                            "note": "Condition on return",
+                            "title": "Mark this rental as returned?"
+                        },
+                        "when": [
+                            {
+                                "op": "eq",
+                                "field": "status",
+                                "value": "out"
+                            }
+                        ],
+                        "label": "Returned",
+                        "action": "setRentalStatus",
+                        "params": {
+                            "status": "returned"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "events": {
+        "beforeSave": "checkRental"
+    },
+    "source": "rentals",
+    "version": 1
+}

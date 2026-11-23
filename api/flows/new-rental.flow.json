@@ -1,0 +1,75 @@
+{
+    "version": {
+        "id": "c4dd8e7f8bd412e56d8c51d4",
+        "steps": [
+            {
+                "id": "c924c8f8e740a1cd59513b4d",
+                "join": null,
+                "kind": "wait",
+                "name": "Customers",
+                "leave": null,
+                "params": null,
+                "values": {
+                    "screen": "customer_edit"
+                },
+                "onError": "stop",
+                "stepKey": "customer_edit",
+                "joinStep": null,
+                "position": 0,
+                "timeoutMs": null,
+                "actionName": "screen-show",
+                "transitions": [
+                    {
+                        "mode": "single",
+                        "target": "rental_edit",
+                        "condition": null
+                    }
+                ]
+            },
+            {
+                "id": "b196891c0f7cbf390fc5de95",
+                "join": null,
+                "kind": "wait",
+                "name": "Rentals",
+                "leave": null,
+                "params": null,
+                "values": {
+                    "screen": "rental_edit"
+                },
+                "onError": "stop",
+                "stepKey": "rental_edit",
+                "joinStep": null,
+                "position": 1,
+                "timeoutMs": null,
+                "actionName": "screen-show",
+                "transitions": [
+                    {
+                        "mode": "single",
+                        "target": "end_success",
+                        "condition": null
+                    }
+                ]
+            }
+        ],
+        "version": 1,
+        "isActive": true,
+        "workflowId": "c6f28fe591da02ae1ea3c493",
+        "fingerprint": "4e21ede9614011a5411698226b0387da61d40073157141d93fe9b6a6dac8113c",
+        "recordCreatedDate": "2026-11-23T07:45:03.389",
+        "recordModifiedDate": "2026-11-23T07:45:03.389"
+    },
+    "workflow": {
+        "id": "c6f28fe591da02ae1ea3c493",
+        "key": "new_rental",
+        "kind": "screens",
+        "name": "New rental",
+        "params": null,
+        "status": "published",
+        "trigger": null,
+        "isActive": true,
+        "description": null,
+        "maxStepRuns": null,
+        "recordCreatedDate": "2026-11-23T07:44:22.809",
+        "recordModifiedDate": "2026-11-23T07:44:56.53"
+    }
+}

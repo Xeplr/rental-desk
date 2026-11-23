@@ -1,0 +1,109 @@
+{
+    "id": "rental_list",
+    "kind": "xeplr-screen",
+    "name": "Rentals",
+    "nodes": [
+        {
+            "h": 0.8,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "list",
+            "type": "list",
+            "props": {
+                "kpis": [
+                    {
+                        "key": "out",
+                        "label": "Out"
+                    },
+                    {
+                        "key": "overdue",
+                        "label": "Overdue"
+                    },
+                    {
+                        "key": "reserved",
+                        "label": "Reserved"
+                    }
+                ],
+                "title": "Rentals",
+                "openIn": "popup",
+                "search": {
+                    "placeholder": "Search reference, customer or equipment"
+                },
+                "actions": [
+                    "new",
+                    "edit"
+                ],
+                "columns": [
+                    {
+                        "field": "reference",
+                        "label": "Reference",
+                        "badges": [
+                            {
+                                "tone": "danger",
+                                "field": "overdue",
+                                "label": "Overdue"
+                            }
+                        ]
+                    },
+                    {
+                        "field": "customer",
+                        "label": "Customer"
+                    },
+                    {
+                        "field": "equipment",
+                        "label": "Equipment"
+                    },
+                    {
+                        "text": "dates",
+                        "field": "startDate",
+                        "label": "Dates"
+                    },
+                    {
+                        "text": "state",
+                        "field": "status",
+                        "label": "Status"
+                    },
+                    {
+                        "field": "total",
+                        "label": "Total"
+                    }
+                ],
+                "filters": [
+                    {
+                        "key": "all",
+                        "label": "All"
+                    },
+                    {
+                        "key": "reserved",
+                        "label": "Reserved"
+                    },
+                    {
+                        "key": "out",
+                        "label": "Out"
+                    },
+                    {
+                        "key": "overdue",
+                        "label": "Overdue"
+                    },
+                    {
+                        "key": "returned",
+                        "label": "Returned"
+                    }
+                ],
+                "pageSize": 10,
+                "rowsFrom": "rentalBoard",
+                "dateRange": {
+                    "default": "all"
+                },
+                "editScreen": "rental_edit"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 1150,
+    "aspect": 1,
+    "source": "rentals",
+    "version": 1
+}

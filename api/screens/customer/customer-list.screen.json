@@ -1,0 +1,46 @@
+{
+    "id": "customer_list",
+    "kind": "xeplr-screen",
+    "name": "Customers",
+    "nodes": [
+        {
+            "h": 0.8,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "list",
+            "type": "list",
+            "props": {
+                "title": "Customers",
+                "openIn": "popup",
+                "actions": [
+                    "new",
+                    "edit",
+                    "delete"
+                ],
+                "columns": [
+                    {
+                        "field": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "field": "email",
+                        "label": "Email"
+                    },
+                    {
+                        "field": "phone",
+                        "label": "Phone"
+                    }
+                ],
+                "pageSize": 10,
+                "editScreen": "customer_edit"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "source": "customers",
+    "version": 1
+}

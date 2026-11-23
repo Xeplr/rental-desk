@@ -1,0 +1,54 @@
+{
+    "id": "category_edit",
+    "kind": "xeplr-screen",
+    "name": "Add / edit category",
+    "nodes": [
+        {
+            "h": 0.07,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "label",
+            "type": "label",
+            "props": {
+                "text": "Add / edit category",
+                "variant": "heading"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.4475,
+            "x": 0.04,
+            "y": 0.15,
+            "z": 2,
+            "id": "name",
+            "type": "text",
+            "props": {
+                "name": "name",
+                "label": "Name",
+                "required": true
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.4475,
+            "x": 0.5125,
+            "y": 0.15,
+            "z": 3,
+            "id": "sortOrder",
+            "type": "number",
+            "props": {
+                "name": "sortOrder",
+                "label": "Sort order"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "master": true,
+    "source": "categories",
+    "version": 1,
+    "labelField": "name"
+}

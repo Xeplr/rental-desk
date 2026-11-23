@@ -1,0 +1,114 @@
+{
+    "id": "customer_edit",
+    "kind": "xeplr-screen",
+    "name": "Customers",
+    "nodes": [
+        {
+            "h": 0.07,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "label",
+            "type": "label",
+            "props": {
+                "text": "Add / edit customer",
+                "variant": "heading"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.4475,
+            "x": 0.04,
+            "y": 0.15,
+            "z": 2,
+            "id": "name",
+            "type": "text",
+            "props": {
+                "name": "name",
+                "label": "Name",
+                "required": true,
+                "validation": {
+                    "maxLength": 200
+                }
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.255,
+            "z": 3,
+            "id": "email",
+            "type": "text",
+            "props": {
+                "name": "email",
+                "label": "Email",
+                "preset": "email",
+                "required": true,
+                "inputType": "email",
+                "validation": {
+                    "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$",
+                    "maxLength": 254,
+                    "patternMessage": "Enter an email address, like name@example.com"
+                },
+                "placeholder": "name@example.com"
+            }
+        },
+        {
+            "h": 0.08,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.36,
+            "z": 4,
+            "id": "phone",
+            "type": "text",
+            "props": {
+                "name": "phone",
+                "label": "Phone",
+                "preset": "phone",
+                "required": true,
+                "inputType": "tel",
+                "validation": {
+                    "pattern": "^\\+?[0-9][0-9 ().\\-]{5,18}[0-9]$",
+                    "maxLength": 20,
+                    "patternMessage": "Enter a phone number — digits, spaces, + ( ) and - only"
+                },
+                "placeholder": "+1 555 010 9999"
+            }
+        },
+        {
+            "h": 0.1,
+            "w": 0.44,
+            "x": 0.04,
+            "y": 0.465,
+            "z": 5,
+            "id": "file",
+            "type": "file",
+            "props": {
+                "name": "idProof",
+                "label": "ID proof",
+                "accept": ".pdf,.doc,.docx,.odt,.rtf,.txt,.xls,.xlsx,.csv,.ods,.png,.jpg,.jpeg,.gif,.webp,.svg",
+                "maxSize": 10
+            }
+        },
+        {
+            "h": 0.18,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.59,
+            "z": 6,
+            "id": "notes",
+            "type": "textarea",
+            "props": {
+                "name": "address",
+                "label": "Address"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "source": "customers",
+    "version": 1
+}

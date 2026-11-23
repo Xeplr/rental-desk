@@ -1,0 +1,43 @@
+{
+    "id": "category_list",
+    "kind": "xeplr-screen",
+    "name": "Categories",
+    "nodes": [
+        {
+            "h": 0.8,
+            "w": 0.92,
+            "x": 0.04,
+            "y": 0.04,
+            "z": 1,
+            "id": "list",
+            "type": "list",
+            "props": {
+                "title": "Categories",
+                "openIn": "popup",
+                "actions": [
+                    "new",
+                    "edit",
+                    "delete"
+                ],
+                "columns": [
+                    {
+                        "field": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "field": "sortOrder",
+                        "label": "Sort order"
+                    }
+                ],
+                "pageSize": 10,
+                "editScreen": "category_edit"
+            }
+        }
+    ],
+    "units": "fraction",
+    "width": 800,
+    "aspect": 1,
+    "master": true,
+    "source": "categories",
+    "version": 1
+}
